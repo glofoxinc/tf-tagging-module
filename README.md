@@ -22,9 +22,9 @@ module "tagging" {
 id = app-plat
 name = app
 tags = {
-  "Environment" = "plat"
-  "Name" = "appp-plat"
-  "Stage" = "platform"
+  "Environment" = "platform"
+  "Name" = "appp-platform"
+  "Stage" = "plat"
   "context" = "memberships"
 }
 tags_as_list_of_maps = [
@@ -34,7 +34,7 @@ tags_as_list_of_maps = [
   },
   {
     "key" = "Name"
-    "value" = "branchname-plat"
+    "value" = "app-plat"
   },
   {
     "key" = "Stage"
@@ -55,5 +55,16 @@ tags_as_list_of_maps = [
 resource "aws_instance" "test_instance" {
   instance_type = "t1.micro"
   tags          = module.tagging.tags
+}
+```
+
+This adds the following tags to the `test_instance`
+
+```
+tags = {
+    "Environment" = "platform"
+    "Name"        = "app-platform"
+    "Stage"       = "plat"
+    "context"     = "memberships"
 }
 ```
