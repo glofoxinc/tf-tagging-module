@@ -45,18 +45,4 @@ locals {
   labels = [for l in local.label_order : local.id_context[l] if length(local.id_context[l]) > 0]
 
   id = lower(join(local.delimiter, local.labels))
-
-  output_context = {
-    enabled             = local.enabled
-    name                = local.name
-    environment         = local.environment
-    stage               = local.stage
-    attributes          = local.attributes
-    tags                = local.tags
-    delimiter           = local.delimiter
-    label_order         = local.label_order
-    regex_replace_chars = var.regex_replace_chars
-    additional_tag_map  = local.additional_tag_map
-  }
-
 }
