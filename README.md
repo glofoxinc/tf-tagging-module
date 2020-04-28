@@ -4,7 +4,6 @@ Terraform module to generate consistent tags for AWS resources. This module will
 
 ## USAGE
 ---
-
 ```
 module "tagging" {
   source           = "git::https://github.com/glofoxinc/tf-tagging-module.git?ref=master"
@@ -52,7 +51,9 @@ tags_as_list_of_maps = [
 
 ### Example
 
-```resource "aws_instance" "test_instance" {
+```
+resource "aws_instance" "test_instance" {
   instance_type = "t1.micro"
   tags          = module.tagging.tags
 }
+```
