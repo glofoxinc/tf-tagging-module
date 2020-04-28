@@ -5,7 +5,8 @@ Terraform module to generate consistent tags for AWS resources. This module will
 ## USAGE
 ---
 
-```module "tagging" {
+```
+module "tagging" {
   source           = "git::https://github.com/glofoxinc/tf-tagging-module.git?ref=master"
   name             = "app"
   stage            = "plat"
@@ -18,7 +19,8 @@ Terraform module to generate consistent tags for AWS resources. This module will
 ```
 
 ## Outputs:
-```id = app-plat
+```
+id = app-plat
 name = app
 tags = {
   "Environment" = "plat"
